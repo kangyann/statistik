@@ -8,7 +8,7 @@ st.title("📊 Aplikasi Statistik Data Excel")
 
 
 def show_statistics(mean, median, mode, var, std, text):
-    st.subheader(f"📈 Statistik dari ${text}")
+    st.subheader(f"📈 Statistik dari {text}")
     st.markdown(f"- **Mean (Rata-rata):** {mean:.2f}")
     st.markdown(f"- **Median:** {median:.2f}")
     st.markdown(f"- **Modus:** {mode}")

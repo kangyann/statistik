@@ -7,8 +7,8 @@ st.set_page_config(page_title="Statistik dari Excel", layout="wide")
 st.title("📊 Aplikasi Statistik Data Excel")
 
 
-def show_statistics(mean, median, mode, var, std):
-    st.subheader("📈 Statistik dari Input Manual")
+def show_statistics(mean, median, mode, var, std, text):
+    st.subheader(f"📈 Statistik dari ${text}")
     st.markdown(f"- **Mean (Rata-rata):** {mean:.2f}")
     st.markdown(f"- **Median:** {median:.2f}")
     st.markdown(f"- **Modus:** {mode}")
@@ -76,7 +76,9 @@ def File(file):
                 # Tampilkan hasil
                 with col2s:
                     st.subheader(f"Hasil Statistik Kolom: **{selected_col}**")
-                    show_statistics(mean_val, median_val, mode_val, var_val, std_dev)
+                    show_statistics(
+                        mean_val, median_val, mode_val, var_val, std_dev, "File Excel"
+                    )
                 show_charts(data)
 
     except Exception as e:
@@ -97,10 +99,10 @@ def Manual(args):
         col1, col2 = st.columns([1, 2])
         var_val = data.var()
         std_dev = data.std()
-        # show_statistics(mean_val, median_val, mode_val, var_val, std_dev)
-        # show_charts(data)
         with col1:
-            show_statistics(mean_val, median_val, mode_val, var_val, std_dev)
+            show_statistics(
+                mean_val, median_val, mode_val, var_val, std_dev, "Manual Input"
+            )
         with col2:
             show_charts(data)
     except Exception as e:

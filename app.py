@@ -4,7 +4,7 @@ from statistics import mode, StatisticsError
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Statistik dari Excel", layout="wide")
-st.title("📊 Aplikasi Statistik Data Excel")
+st.title("Aplikasi Simulasi Statistik Deskriptif Matematika Terapan")
 st.subheader("Perhitungan untuk mencari Mean, Median, Modus, Varians dan Standar Deviasi")
 
 def show_statistics(mean, median, mode, var, std, text):

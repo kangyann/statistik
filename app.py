@@ -5,15 +5,20 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Statistik dari Excel", layout="wide")
 st.title("📊 Aplikasi Statistik Data Excel")
-
+st.subheader("Perhitungan untuk mencari Mean, Median, Modus, Varians dan Standar Deviasi")
 
 def show_statistics(mean, median, mode, var, std, text):
     st.subheader(f"📈 Statistik dari {text}")
     st.markdown(f"- **Mean (Rata-rata):** {mean:.2f}")
+    st.text("Didapatkan dari penjumlahan keseluruhan data dan dibagi dengan jumlah banyaknya data.")
     st.markdown(f"- **Median:** {median:.2f}")
+    st.text("Urutkan data dari kecil ke besar. Jika data genap maka dijumlahkan dan dibagi 2 / ketika ganjil ambil yang paling tengah.")
     st.markdown(f"- **Modus:** {mode}")
+    st.text("Temukan nilai yang sering muncul, maka itulah hasilnya.")
     st.markdown(f"- **Varians:** {var:.2f}")
+    st.text("Berkaitan dengan mean, cari selisih dan kuadratnya, kemudian jumlahkan dan dibagi dengan jumlah banyaknya data.")
     st.markdown(f"- **Standar Deviasi:** {std:.2f}")
+    st.text("Hasil dari varians diakarkan.")
 
 
 def show_charts(data):
